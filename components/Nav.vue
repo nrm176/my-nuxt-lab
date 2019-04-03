@@ -5,14 +5,16 @@
           <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
         </a>
 
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <a role="button" class="navbar-burger burger"
+           v-bind:class="{ 'is-active': menuActive }" v-on:click="menuToggle()"
+           aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
       </div>
 
-      <div id="navbarBasicExample" class="navbar-menu">
+      <div id="navbarBasicExample" class="navbar-menu" v-bind:class="{ 'is-active': menuActive }">
         <div class="navbar-start">
           <a class="navbar-item">
             Home
@@ -67,7 +69,17 @@
 
 <script>
     export default {
-        name: "Nav"
+        name: "Nav",
+      data() {
+          return {
+            menuActive:false,
+          }
+      },
+      methods: {
+        menuToggle() {
+          this.menuActive = !this.menuActive;
+        },
+      }
     }
 </script>
 

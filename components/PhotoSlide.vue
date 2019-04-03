@@ -21,15 +21,18 @@
 <script>
   export default {
     name: "PhotoSlide",
-    data: () => ({
-      images: [
-        {id: 1, src: 'amy-chen-1413497-unsplash'},
-        {id: 2, src: 'frank-albrecht-1403494-unsplash'},
-        {id: 3, src: 'element5-digital-500016-unsplash'},
-        {id: 4, src: 'pineapple-supply-co-29325-unsplash'},
-        {id: 5, src: 'rebecca-matthews-1133972-unsplash'},
-      ]
-    }),
+    data(){
+      return{
+        images: [
+          {id: 1, src: 'amy-chen-1413497-unsplash'},
+          {id: 2, src: 'frank-albrecht-1403494-unsplash'},
+          {id: 3, src: 'element5-digital-500016-unsplash'},
+          {id: 4, src: 'pineapple-supply-co-29325-unsplash'},
+          {id: 5, src: 'rebecca-matthews-1133972-unsplash'},
+        ]
+
+      }
+    }
   }
 </script>
 
