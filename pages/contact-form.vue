@@ -1,18 +1,17 @@
 <template>
   <div>
     <Nav/>
-    <PhotoSlide/>
+    <ContactForm/>
   </div>
-
 </template>
 
 <script>
-  import PhotoSlide from "../components/PhotoSlide";
+  import ContactForm from "@/components/form/ContactForm";
   import Nav from "../components/Nav";
 
   export default {
-    name: "slide",
-    components: {Nav, PhotoSlide}
+    name: "contact-form",
+    components: {Nav, ContactForm}
   }
 </script>
 

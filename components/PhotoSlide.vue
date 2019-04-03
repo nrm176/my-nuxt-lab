@@ -34,5 +34,15 @@
 </script>
 
 <style scoped>
+  .VueCarousel-slide {
+    position: relative;
+    background: #42b983;
+    color: #fff;
+    font-family: Arial;
+    font-size: 24px;
+    text-align: center;
+    min-height: 100px;
+  }
+
 
 </style>
