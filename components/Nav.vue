@@ -20,10 +20,10 @@
             Home
           </a>
 
-            <nuxt-link to="slide" class="navbar-item">
+            <nuxt-link to="/slide" class="navbar-item">
             Slide
             </nuxt-link>
-            <nuxt-link to="contact-form" class="navbar-item">
+            <nuxt-link to="/contact-form" class="navbar-item">
               Contact Form
             </nuxt-link>
 
