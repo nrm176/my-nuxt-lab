@@ -1,28 +1,40 @@
 <template>
   <div class="hero">
-    <no-ssr>
-      <carousel
-        :autoplay="true"
-        :navigationEnabled="true"
-        :perPageCustom="[[600, 1]]"
-      >
-        <slide v-for="image in images">
+    <div class="container">
+        <div class="padding">
+
+          <no-ssr>
+            <carousel
+              :autoplay="true"
+              :navigationEnabled=false
+              :paginationPadding=15
+              :perPage="1"
+              paginationPosition="bottom-overlay"
+              :navigationClickTargetSize=8
+
+            >
+              <slide v-for="image in images" :key="image.id">
           <span>
             <img
               :src="`https://res.cloudinary.com/dfkqsafii/image/upload/c_thumb,w_600,g_face/v1554265123/my-nuxt-lab/${image.src}.jpg`"/>
           </span>
-        </slide>
+              </slide>
 
-      </carousel>
-    </no-ssr>
+            </carousel>
+          </no-ssr>
+        </div>
+
+
+    </div>
   </div>
+
 </template>
 
 <script>
   export default {
     name: "PhotoSlide",
-    data(){
-      return{
+    data() {
+      return {
         images: [
           {id: 1, src: 'amy-chen-1413497-unsplash'},
           {id: 2, src: 'frank-albrecht-1403494-unsplash'},
@@ -39,7 +51,7 @@
 <style scoped>
   .VueCarousel-slide {
     position: relative;
-    color: #fff;
+    color: #fefdff;
     font-family: Arial;
     font-size: 24px;
     text-align: center;
@@ -47,7 +59,18 @@
   }
 
   .VueCarousel-dot-container {
-    marin-top: 5px !important;
+    marin-top: -15px;
+  }
+
+  .label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .padding {
+    padding: 2rem;
   }
 
 

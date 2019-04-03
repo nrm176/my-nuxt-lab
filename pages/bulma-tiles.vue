@@ -36,18 +36,6 @@
               </article>
             </div>
           </div>
-          <!--<div class="tile is-parent">-->
-            <!--<article class="tile is-child notification is-danger">-->
-              <!--<p class="title">レモン</p>-->
-              <!--<p class="subtitle">Lemon</p>-->
-              <!--<figure class="image">-->
-                <!--<img :src="`https://res.cloudinary.com/dfkqsafii/image/upload/w_auto:100:400/v1554265123/my-nuxt-lab/${images[1].src}.jpg`">-->
-              <!--</figure>-->
-              <!--<div class="content">-->
-                <!--The lemon, Citrus limon (L.) Osbeck, is a species of small evergreen tree in the flowering plant family Rutaceae, native to South Asia, primarily North eastern India.-->
-              <!--</div>-->
-            <!--</article>-->
-          <!--</div>-->
         </div>
 
         <div class="tile is-parent">
