@@ -18,16 +18,12 @@
             Home
           </a>
 
-          <a class="navbar-item">
-            <nuxt-link to="slide">
+            <nuxt-link to="slide" class="navbar-item">
             Slide
             </nuxt-link>
-          </a>
-          <a class="navbar-item">
-            <nuxt-link to="contact-form">
+            <nuxt-link to="contact-form" class="navbar-item">
               Contact Form
             </nuxt-link>
-          </a>
 
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
