@@ -26,6 +26,9 @@
             <nuxt-link to="/contact-form" class="navbar-item">
               Contact Form
             </nuxt-link>
+          <nuxt-link to="/bulma-tiles" class="navbar-item">
+            Bulma Tiles
+          </nuxt-link>
 
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
