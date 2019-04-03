@@ -1,0 +1,3 @@
+[build]
+  command = "npm run generate; netlify-lambda build lambda"
+  functions = "functions"
