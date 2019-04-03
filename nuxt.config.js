@@ -54,6 +54,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    {src: "~plugins/carousel.js", ssr: false}
   ],
 
   /*

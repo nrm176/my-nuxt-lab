@@ -19,7 +19,9 @@
           </a>
 
           <a class="navbar-item">
-            Documentation
+            <nuxt-link to="slide">
+            Slide
+            </nuxt-link>
           </a>
 
           <div class="navbar-item has-dropdown is-hoverable">
