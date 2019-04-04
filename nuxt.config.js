@@ -54,6 +54,11 @@ export default {
     '~/static/css/global.css'
   ],
 
+  env: {
+    function_url: `${process.env.DEPLOY_PRIME_URL}/.netlify/functions`
+    // function_url: process.env.CONTEXT === undefined ? process.env.DEPLOY_PRIME_URL : process.env.CONTEXT == 'production' ? `${process.env.URL}/.netlify/functions` : process.env.CONTEXT == 'dev' ? `${process.env.DEPLOY_PRIME_URL}/.netlify/functions` : 'http://localhost:9000'
+  },
+
   /*
   ** Plugins to load before mounting the App
   */

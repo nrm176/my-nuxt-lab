@@ -16,12 +16,21 @@
 
     </div>
 
-    <vue-recaptcha @verify="onVerify" size="normal" sitekey="6Ld9fJYUAAAAAGqdZMmctq0fxA_ehZdPqhnLAiZm"></vue-recaptcha>
+    <vue-recaptcha @verify="onVerify"
+                   size="normal"
+                   sitekey="6Ld9fJYUAAAAAGqdZMmctq0fxA_ehZdPqhnLAiZm"></vue-recaptcha>
 
     <div class="is-flex">
-      <button class="button is-light" type="submit" @click="backToForm">戻る</button>
+      <button class="button is-light"
+              type="submit"
+              :disabled="backDisabled"
+              @click="backToForm">戻る</button>
 
-      <button class="button is-link" style="margin-left: 0.5rem;" v-bind:class="{'is-loading':loading}" :disabled="isDisabled" @click="handleSubmit">
+      <button class="button is-link"
+              style="margin-left: 0.5rem;"
+              v-bind:class="{'is-loading':loading}"
+              :disabled="isDisabled"
+              @click="handleSubmit">
         送信する
       </button>
     </div>
@@ -50,7 +59,8 @@
       ok_to_submit: false,
       error_msg: '',
       token: '',
-      loading: false
+      loading: false,
+      backDisabled: false
     }),
     mounted() {
     },
@@ -90,12 +100,15 @@
       async handleSubmit() {
         this.ok_to_submit = false
         this.loading = true
+        this.backDisabled = true
 
         const flag = this.validate()
         if (!flag) {
           this.error_msg = '問い合わせ内容がありません'
           this.ok_to_submit = true
           this.loading = false
+          this.backDisabled = false
+
           return
         }
 
@@ -119,22 +132,30 @@
                 this.error_msg = 'システムエラーにより現在問い合わせフォームが機能していません。申し訳ありません。'
                 this.ok_to_submit = true
                 this.loading = false
+                this.backDisabled = false
+
               }
             }).catch(() => {
               this.error_msg = 'システムエラーにより現在問い合わせフォームが機能していません。申し訳ありません。'
               this.ok_to_submit = true
               this.loading = false
+              this.backDisabled = false
+
             });
           } else {
             this.error_msg = '「ボットでありません」を選択してください'
             this.ok_to_submit = true
             this.loading = false
+            this.backDisabled = false
+
           }
         } catch (e) {
           console.log('Error:', e)
           this.error_msg = '「ボットでありません」を選択してください'
           this.ok_to_submit = true
           this.loading = false
+          this.backDisabled = false
+
 
         }
       }

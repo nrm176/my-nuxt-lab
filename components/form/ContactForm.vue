@@ -57,7 +57,9 @@
         <div class="field">
           <label class="label">内容</label>
           <div class="control">
-            <textarea name="text_area" class="textarea" placeholder="Message us" v-model="form.text_area"
+            <textarea name="text_area" class="textarea"
+                      placeholder="問い合わせ内容を入力してください"
+                      v-model="form.text_area"
                       v-validate="'required'"></textarea>
           </div>
           <no-ssr>
@@ -84,7 +86,8 @@
 
         <div class="field is-grouped">
           <div class="control">
-            <button class="button is-link" @click="validateAndSubmit">送信内容を確認する</button>
+            <button class="button is-link"
+                    @click="validateAndSubmit">送信内容を確認する</button>
           </div>
         </div>
       </div>
@@ -126,8 +129,8 @@
           email: '',
           user_name: '',
           phone: '',
-          isActive: false
-        }
+        },
+        isActive: false
       }
     },
     mounted() {
@@ -140,7 +143,6 @@
           email: '',
           user_name: '',
           phone: '',
-          isActive: false
         }
       } else {
         this.form = d.form
@@ -153,15 +155,6 @@
       },
       close() {
         this.isActive = !this.isActive
-      },
-      checkForm() {
-        if (this.user_name && this.email && this.text_area) {
-          return true;
-        }
-
-
-        e.preventDefault()
-
       },
       SubmitForm() {
         const payload = {
