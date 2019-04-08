@@ -1,12 +1,22 @@
 <template>
   <div class="box">
+
+    <div v-if="!isEditMode">
+      この内容で送信します。よろしいですか。
+    </div>
+
     <UserName ref="user_name" :edit-mode="isEditMode" :validation-on="true"/>
     <PhoneNumber ref="phone_number" :edit-mode="isEditMode" :validation-on="true"/>
     <ReservationDatetime ref="datetime" :edit-mode="isEditMode" :validation-on="true"/>
 
-    <button class="button" @click="submitForm">送信する</button>
-    <button class="button" @click="setEditMode">編集する</button>
-    <div>
+    <div v-if="isEditMode">
+      <button class="button" @click="submitForm">この内容で送る</button>
+    </div>
+    <div v-else>
+      <button class="button" @click="setEditMode">編集する</button>
+      <button class="button" @click="">送信する</button>
+    </div>
+    <div v-if="!isEditMode">
       {{form_data}}
     </div>
   </div>
@@ -44,8 +54,8 @@
 
         if (v1 && v2 && v3){
           console.log('OK to submit')
-          const formData = this.getChildData()
-          console.log(formData)
+          this.form_data = this.getChildData()
+          this.isEditMode = false
         } else {
           console.log('Not good to submit')
         }

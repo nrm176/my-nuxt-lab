@@ -2,7 +2,7 @@
   <div class="field">
     <label class="label">電話番号(ハイフンなし)</label>
     <div v-if="!$props.editMode">
-
+      <div>{{phone_number}}</div>
     </div>
     <div v-else>
       <div class="control has-icons-left has-icons-right">
