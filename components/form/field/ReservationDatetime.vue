@@ -14,7 +14,7 @@
                     input-class="input is-medium"
                     format="yyyy-MM-dd"
         ></datepicker>
-        <span class="icon is-small is-left" style="font-size: 1.25rem;"><i class="fas fa-user"></i></span>
+        <span class="icon is-small is-left" style="font-size: 1.25rem;"><i class="far fa-clock"></i></span>
 
       </div>
       <div v-if="validationOn">
