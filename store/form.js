@@ -3,11 +3,12 @@ export const state = () => ({
   text_area: '',
   email: '',
   phone: '',
-  user_name: '',
+  username: '',
   valid_form: false,
   form_name: '',
   form_id: '',
-  form_pattern: ''
+  form_pattern: '',
+  datetime: ''
 })
 
 export const mutations = {
@@ -16,21 +17,32 @@ export const mutations = {
     state.text_area = payload.data.text_area
     state.email = payload.data.email
     state.phone = payload.data.phone
-    state.user_name = payload.data.user_name
+    state.username = payload.data.username
     state.form_name = payload.form_name
     state.form_id = payload.form_id
     state.form_pattern = payload.form_pattern
+    state.datetime = payload.data.datetime
   },
   clearFormDataFromStore(state, payload) {
     state.term_checked = false,
       state.text_area = '',
       state.email = '',
       state.phone = '',
-      state.user_name = '',
+      state.username = '',
       state.valid_form = false,
       state.form_name = '',
       state.form_id = '',
       state.form_pattern = ''
+    state.datetime = ''
+  },
+  addPhoneNumber(state, payload) {
+    state.phone = payload
+  },
+  addUserName(state, payload) {
+    state.username = payload
+  },
+  addDateTime(state, payload) {
+    state.datetime = payload
   }
 }
 
@@ -41,5 +53,17 @@ export const actions = {
 
   clearFormDataFromStore(context, payload) {
     context.commit('clearFormDataFromStore', payload)
+  },
+
+  addPhoneNumber(context, payload){
+    context.commit('addPhoneNumber', payload)
+  },
+
+  addUserName(context, payload) {
+    context.commit('addUserName', payload)
+  },
+
+  addDateTime(context, payload) {
+    context.commit('addDateTime', payload)
   }
 }
