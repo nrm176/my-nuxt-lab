@@ -1,6 +1,6 @@
 <template>
   <div class="field">
-    <label class="label">予約日時</label>
+    <label class="label">予約日</label>
 
     <div v-if="!$props.editMode">
       <div>{{date}}</div>
