@@ -9,6 +9,7 @@ export const state = () => ({
     email: '',
     phone: '',
     username: '',
+    date: '',
     datetime: '',
     checkedChoice: []
   },
@@ -58,6 +59,9 @@ export const mutations = {
   addUserName(state, payload) {
     state.data.username = payload
   },
+  addDate(state, payload) {
+    state.data.date = payload
+  },
   addDateTime(state, payload) {
     state.data.datetime = payload
   },
@@ -84,6 +88,10 @@ export const actions = {
 
   addUserName(context, payload) {
     context.commit('addUserName', payload)
+  },
+
+  addDate(context, payload) {
+    context.commit('addDate', payload)
   },
 
   addDateTime(context, payload) {

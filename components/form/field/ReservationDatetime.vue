@@ -3,18 +3,17 @@
     <label class="label">予約日時</label>
 
     <div v-if="!$props.editMode">
-      <div>{{datetime}}</div>
+      <div>{{date}}</div>
     </div>
     <div v-else>
 
       <div class="control has-icons-left has-icons-right">
-        <datepicker v-model="datetime"
+        <datepicker v-model="date"
                     name="datetime"
                     v-validate="'required'"
                     input-class="input is-medium"
                     format="yyyy-MM-dd"
-                    :disabledDates="holiday"
-        ></datepicker>
+                    :disabledDates="holiday"></datepicker>
         <span class="icon is-small is-left" style="font-size: 1.25rem;"><i class="far fa-clock"></i></span>
 
       </div>
@@ -40,6 +39,7 @@
     data() {
       return {
         holiday: {
+          to: new Date((new Date()).valueOf() - 1000*3600*24),
           days: [0, 3],
           dates: [
             new Date(2019, 0, 1),
@@ -90,12 +90,12 @@
       Datepicker
     },
     computed: {
-      datetime: {
+      date: {
         get: function () {
-          return this.$store.state.form.data.datetime
+          return this.$store.state.form.data.date
         },
         set: function (newValue) {
-          this.$store.dispatch('form/addDateTime', newValue)
+          this.$store.dispatch('form/addDate', newValue)
         }
       }
     },
