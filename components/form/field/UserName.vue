@@ -37,7 +37,7 @@
     computed: {
       user_name : {
         get: function () {
-          return this.$store.state.form.username
+          return this.$store.state.form.data.username
         },
         set: function (newValue) {
           this.$store.dispatch('form/addUserName', newValue)

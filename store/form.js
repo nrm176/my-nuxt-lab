@@ -1,4 +1,21 @@
 export const state = () => ({
+  properties: {
+    name: '',
+    id: '',
+    pattern: ''
+  },
+  data: {
+    text_area: '',
+    email: '',
+    phone: '',
+    username: '',
+    datetime: '',
+    checkedChoice: []
+  },
+  status: {
+    term_checked: false,
+    valid_form: false,
+  },
   term_checked: false,
   text_area: '',
   email: '',
@@ -36,14 +53,20 @@ export const mutations = {
     state.datetime = ''
   },
   addPhoneNumber(state, payload) {
-    state.phone = payload
+    state.data.phone = payload
   },
   addUserName(state, payload) {
-    state.username = payload
+    state.data.username = payload
   },
   addDateTime(state, payload) {
-    state.datetime = payload
-  }
+    state.data.datetime = payload
+  },
+  setTermChecked(state, payload){
+    state.status.term_checked = payload
+  },
+  setCheckedChoice(state, payload){
+    state.data.checkedChoice = payload
+  },
 }
 
 export const actions = {
@@ -65,5 +88,13 @@ export const actions = {
 
   addDateTime(context, payload) {
     context.commit('addDateTime', payload)
-  }
+  },
+
+  setTermChecked(context, payload) {
+    context.commit('setTermChecked', payload)
+  },
+
+  setCheckedChoice(context, payload) {
+    context.commit('setCheckedChoice', payload)
+  },
 }

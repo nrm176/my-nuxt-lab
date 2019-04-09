@@ -8,7 +8,8 @@
     <UserName ref="user_name" :edit-mode="isEditMode" :validation-on="true"/>
     <PhoneNumber ref="phone_number" :edit-mode="isEditMode" :validation-on="true"/>
     <ReservationDatetime ref="datetime" :edit-mode="isEditMode" :validation-on="true"/>
-
+    <CheckBox />
+    <Rule :validation-on="true" />
     <div v-if="isEditMode">
       <button class="button" @click="submitForm">この内容で送る</button>
     </div>
@@ -26,10 +27,13 @@
   import UserName from "./field/UserName";
   import PhoneNumber from "./field/PhoneNumber";
   import ReservationDatetime from "./field/ReservationDatetime";
+  import Rule from "./field/Rule";
+  import CheckBox from "./field/CheckBox";
+
 
   export default {
     name: "FormComponent",
-    components: {PhoneNumber, UserName, ReservationDatetime},
+    components: {CheckBox, PhoneNumber, UserName, ReservationDatetime, Rule},
     data() {
       return {
         form_data: {},
@@ -39,9 +43,9 @@
     methods: {
       getChildData() {
         return {
-          user_name: this.$store.state.form.user_name,
-          phone_number: this.$store.state.form.phone,
-          datetime: this.$store.state.form.datetime,
+          user_name: this.$store.state.form.data.username,
+          phone_number: this.$store.state.form.data.phone,
+          datetime: this.$store.state.form.data.datetime,
         }
       },
       setEditMode() {

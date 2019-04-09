@@ -41,7 +41,7 @@
       computed: {
         datetime : {
           get: function () {
-            return this.$store.state.form.datetime
+            return this.$store.state.form.data.datetime
           },
           set: function (newValue) {
             this.$store.dispatch('form/addDateTime', newValue)

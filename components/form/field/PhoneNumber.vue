@@ -35,7 +35,7 @@
       phone_number: {
         // getter
         get: function () {
-          return this.$store.state.form.phone
+          return this.$store.state.form.data.phone
         },
         // setter
         set: function (newValue) {
