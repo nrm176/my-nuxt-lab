@@ -4,9 +4,9 @@
     <div class="field">
       <div class="control">
             <span v-for="choice in choices" :key="choice.id" style="padding-right: 1rem;">
-              <input type="checkbox" id="${choice.id}" name="checkbox" v-model="checkedChoice"
-                     :value="choice">
-              <label class="checkbox" for="${choice.id}">{{choice.name}}</label>
+              <input type="checkbox" :id="choice.id" name="checkbox" v-model="checkedChoice"
+                     :value="choice" :disabled="!$props.editMode">
+              <label class="checkbox" :for="choice.id">{{choice.name}}</label>
             </span>
       </div>
     </div>
@@ -16,6 +16,10 @@
 <script>
     export default {
         name: "CheckBox",
+      props: {
+        editMode: Boolean,
+        validationOn: Boolean
+      },
         data() {
           return {
             choices: [

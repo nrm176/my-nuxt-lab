@@ -5,7 +5,7 @@
         <input type="checkbox" id="checkbox"
                name="term_checked"
                v-model="term_checked"
-               v-validate="'required'">
+               v-validate="'required'" :disabled="!$props.editMode">
         <span>
               個人情報保護指針に同意する
             </span>
@@ -22,6 +22,7 @@
     export default {
         name: "Rule",
       props: {
+        editMode: Boolean,
         validationOn: Boolean
       },
       computed: {

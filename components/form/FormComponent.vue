@@ -8,8 +8,8 @@
     <UserName ref="user_name" :edit-mode="isEditMode" :validation-on="true"/>
     <PhoneNumber ref="phone_number" :edit-mode="isEditMode" :validation-on="true"/>
     <ReservationDatetime ref="datetime" :edit-mode="isEditMode" :validation-on="true"/>
-    <CheckBox />
-    <Rule :validation-on="true" />
+    <CheckBox :edit-mode="isEditMode"/>
+    <Rule :edit-mode="isEditMode" :validation-on="true" />
     <div v-if="isEditMode">
       <button class="button" @click="submitForm">この内容で送る</button>
     </div>
