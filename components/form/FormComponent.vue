@@ -8,7 +8,10 @@
     <UserName ref="user_name" :edit-mode="isEditMode" :validation-on="true"/>
     <PhoneNumber ref="phone_number" :edit-mode="isEditMode" :validation-on="true"/>
     <ReservationDatetime ref="datetime" :edit-mode="isEditMode" :validation-on="true"/>
+    <BuefyDatepicker />
+    <BuefyTimepicker />
     <CheckBox :edit-mode="isEditMode"/>
+    <BuefyCheckbox />
     <Rule :edit-mode="isEditMode" :validation-on="true" />
     <div v-if="isEditMode">
       <button class="button" @click="submitForm">この内容で送る</button>
@@ -29,11 +32,16 @@
   import ReservationDatetime from "./field/ReservationDatetime";
   import Rule from "./field/Rule";
   import CheckBox from "./field/CheckBox";
+  import BuefyDatepicker from "./field/BuefyDatepicker";
+  import BuefyTimepicker from "./field/BuefyTimepicker";
+  import BuefyCheckbox from "./field/BuefyCheckbox";
 
 
   export default {
     name: "FormComponent",
-    components: {CheckBox, PhoneNumber, UserName, ReservationDatetime, Rule},
+    components: {
+      BuefyCheckbox,
+      BuefyTimepicker, BuefyDatepicker, CheckBox, PhoneNumber, UserName, ReservationDatetime, Rule},
     data() {
       return {
         form_data: {},

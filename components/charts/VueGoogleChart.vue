@@ -2,16 +2,19 @@
   <!--https://github.com/devstark-com/vue-google-charts?ref=madewithvuejs.com#usage
   -->
   <!--https://madewithvuejs.com/vue-js-google-charts-->
-  <div class="box">
+  <div class="container">
     <div class="columns">
       <div class="column">
-        <GChart
-          type="BubbleChart"
-          :data="bubbleChartData"
-          :options="chartOptions"
-          :resizeDebounce="500"
-          style="height: 500px;"
-        />
+        <div class="box">
+          <h2>Bubble Chart</h2>
+          <GChart
+            type="BubbleChart"
+            :data="bubbleChartData"
+            :options="chartOptions"
+            :resizeDebounce="500"
+            style="height: 500px;"
+          />
+        </div>
       </div>
     </div>
 
@@ -67,17 +70,17 @@
           ['2017', 1030, 540, 350]
         ],
         bubbleChartData: [
-          ['ID', 'Life Expectancy', 'Fertility Rate', 'Region',     'Population'],
-          ['CAN',    80.66,              1.67,      'North America',  33739900],
-          ['DEU',    79.84,              1.36,      'Europe',         81902307],
-          ['DNK',    78.6,               1.84,      'Europe',         5523095],
-          ['EGY',    72.73,              2.78,      'Middle East',    79716203],
-          ['GBR',    80.05,              2,         'Europe',         61801570],
-          ['IRN',    72.49,              1.7,       'Middle East',    73137148],
-          ['IRQ',    68.09,              4.77,      'Middle East',    31090763],
-          ['ISR',    81.55,              2.96,      'Middle East',    7485600],
-          ['RUS',    68.6,               1.54,      'Europe',         141850000],
-          ['USA',    78.09,              2.05,      'North America',  307007000]
+          ['ID', 'Life Expectancy', 'Fertility Rate', 'Region', 'Population'],
+          ['CAN', 80.66, 1.67, 'North America', 33739900],
+          ['DEU', 79.84, 1.36, 'Europe', 81902307],
+          ['DNK', 78.6, 1.84, 'Europe', 5523095],
+          ['EGY', 72.73, 2.78, 'Middle East', 79716203],
+          ['GBR', 80.05, 2, 'Europe', 61801570],
+          ['IRN', 72.49, 1.7, 'Middle East', 73137148],
+          ['IRQ', 68.09, 4.77, 'Middle East', 31090763],
+          ['ISR', 81.55, 2.96, 'Middle East', 7485600],
+          ['RUS', 68.6, 1.54, 'Europe', 141850000],
+          ['USA', 78.09, 2.05, 'North America', 307007000]
         ],
         chartOptions: {
           chart: {
