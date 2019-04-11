@@ -12,6 +12,7 @@
     <BuefyTimepicker />
     <CheckBox :edit-mode="isEditMode"/>
     <BuefyCheckbox />
+    <SelectBox />
     <Rule :edit-mode="isEditMode" :validation-on="true" />
     <div v-if="isEditMode">
       <button class="button" @click="submitForm">この内容で送る</button>
@@ -35,11 +36,13 @@
   import BuefyDatepicker from "./field/BuefyDatepicker";
   import BuefyTimepicker from "./field/BuefyTimepicker";
   import BuefyCheckbox from "./field/BuefyCheckbox";
+  import SelectBox from "./field/SelectBox";
 
 
   export default {
     name: "FormComponent",
     components: {
+      SelectBox,
       BuefyCheckbox,
       BuefyTimepicker, BuefyDatepicker, CheckBox, PhoneNumber, UserName, ReservationDatetime, Rule},
     data() {

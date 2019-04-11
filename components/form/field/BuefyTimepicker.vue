@@ -4,8 +4,8 @@
       <b-timepicker
         placeholder="Click to select..."
         :increment-minutes="increment"
-        :min-time="minTime"
-        :max-time="maxTime"
+        :min-time="min"
+        :max-time="max"
         icon="clock"
         custom-class="is-medium"
       >
@@ -25,8 +25,8 @@
         max.setHours(18)
         max.setMinutes(0)
         return {
-          minTime: min,
-          maxTime: max,
+          min: min,
+          max: max,
           increment: 30
         }
       }
