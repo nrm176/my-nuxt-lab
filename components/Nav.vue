@@ -35,6 +35,18 @@
           Form Page
         </nuxt-link>
 
+        <nuxt-link to="/charts" class="navbar-item">
+          Chart
+        </nuxt-link>
+
+        <nuxt-link to="/grid" class="navbar-item">
+          CSS Grid
+        </nuxt-link>
+
+        <nuxt-link to="/hero-page" class="navbar-item">
+          Hero
+        </nuxt-link>
+
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
             More
