@@ -47,6 +47,10 @@
           Hero
         </nuxt-link>
 
+        <nuxt-link to="/lemon" class="navbar-item">
+          Lemon
+        </nuxt-link>
+
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
             More
