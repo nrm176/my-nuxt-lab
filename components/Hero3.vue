@@ -29,24 +29,27 @@
 
     <main class="hero-foot center" style="padding: 2rem;">
       <div id="grid" style="width: 768px;">
-        <div id="a" class="center-column has-text-centered subtitle" style="">Lemon is one of the important category of citrus.<br/> It is mainly known for its pulp and juice throughout the world.
+        <div id="a" class="center-column has-text-centered subtitle" style="">Lemon is one of the important category of
+          citrus.<br/> It is mainly known for its pulp and juice throughout the world.
         </div>
         <div id="b" class="center-column">
                     <span>
-                        <i class="fas fa-car" style="width: 1.2rem;height: 1.2rem;"></i> <span
+                        <i class="fas fa-lemon" style="width: 1.2rem;height: 1.2rem;"></i> <span
                       class="title is-4">100mg</span>
                     </span>
           <p class="subtitle is-7">ビタミンC</p>
         </div>
         <div id="c" class="center-column" style="border-left: 1px solid grey;">
                     <span>
+                      <i class="fas fa-nutritionix" style="width: 1.2rem;height: 1.2rem;"></i>
                         <span class="title is-4">クエン酸</span>
                     </span>
           <p class="subtitle is-7">疲労回復</p>
         </div>
         <div id="d" class="center-column" style="border-left: 1px solid grey;">
                     <span>
-                        <span class="title is-4">620 mi</span>
+                    <i class="fas fa-utensils-alt" style="width: 1.2rem;height: 1.2rem;"></i>
+                      <span class="title is-4">食べる</span>
                     </span>
           <p class="subtitle is-7">デトックス</p>
         </div>
