@@ -4,9 +4,14 @@
 
 [context.production.environment]
   IS_DEV = "false"
+  NODE_ENV = "development"
 
 [context.deploy-preview.environment]
   IS_DEV = "true"
 
 [context.branch-deploy.environment]
   IS_DEV = "true"
+
+[context.branch-deploy.environment]
+  NODE_ENV = "development"
+
