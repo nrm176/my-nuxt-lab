@@ -1,0 +1,1 @@
+VARNAME="my_value"

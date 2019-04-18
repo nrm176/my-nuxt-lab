@@ -2,9 +2,11 @@
   command = "npm run generate; netlify-lambda build lambda"
   functions = "functions"
 
-[context.production.environment]
-  IS_DEV = "false"
-  NODE_ENV = "development"
+[context.production]
+  command = './setenv.sh'
+  [environment]
+    IS_DEV = "false"
+    NODE_ENV = "development"
 
 [context.deploy-preview.environment]
   IS_DEV = "true"
