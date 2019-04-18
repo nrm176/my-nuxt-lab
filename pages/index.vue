@@ -15,7 +15,7 @@ export default {
     Nav
   },
   mounted() {
-    console.log(process.env)
+    console.log(context.env.function_url)
   }
 }
 </script>
