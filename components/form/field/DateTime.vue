@@ -18,7 +18,8 @@
             :min-date="today"
             icon="calendar-today"
             v-model="picked_date"
-            custom-class="is-medium">
+            custom-class="is-medium"
+            mobile-native="false">
           </b-datepicker>
         </div>
         <div class="column is-6">

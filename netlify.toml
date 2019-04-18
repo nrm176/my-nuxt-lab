@@ -1,9 +1,9 @@
 [build]
-  command = "npm run generate; netlify-lambda build lambda"
+  command = "npm run generate;"
   functions = "functions"
 
 [context.production]
-  command = 'export MY_ENV="HELLO"; npm run generate; netlify-lambda build lambda'
+  command = 'export MY_ENV="HELLO"; npm run generate;'
   [environment]
     IS_DEV = "false"
     NODE_ENV = "development"
