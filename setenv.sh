@@ -1,1 +1,1 @@
-VARNAME="my_value"
+MY_ENV="my_value"
