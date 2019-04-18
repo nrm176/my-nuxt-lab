@@ -4,6 +4,7 @@
                   :unselectable-dates="unselectable_dates"
                   placeholder="Click to select..."
                   mobile-native="false"
+                  inline
                   icon="calendar-today">
     </b-datepicker>
   </b-field>
