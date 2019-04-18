@@ -13,6 +13,9 @@ import Nav from "../components/Nav";
 export default {
   components: {
     Nav
+  },
+  mounted() {
+    console.log(process.env)
   }
 }
 </script>
