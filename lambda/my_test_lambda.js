@@ -1,6 +1,6 @@
 export async function handler(event, context, callback) {
 
-  console.log(process.env.IS_DEV)
+  console.log('just testing....')
 
   return callback(null, {
     statusCode: 200,
