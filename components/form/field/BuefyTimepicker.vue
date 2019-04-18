@@ -8,6 +8,7 @@
         :max-time="max"
         icon="clock"
         custom-class="is-medium"
+        mobile-native="false"
       >
       </b-timepicker>
     </b-field>
