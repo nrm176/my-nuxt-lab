@@ -29,8 +29,8 @@ const ja_custom_msg = {
     term_checked : {
       required: '個人情報保護方針を選択してください'
     },
-    datetime : {
-      required: '日時は必須です'
+    date_time : {
+      required: '日時は必須です',
     }
   }
 }

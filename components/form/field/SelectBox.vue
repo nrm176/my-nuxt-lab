@@ -1,4 +1,5 @@
 <template>
+  <div>
     <b-field label="選択肢(Buefy)">
       <b-select icon="clock" placeholder="Select a name" v-model="selectedOption">
         <option
@@ -9,8 +10,8 @@
           {{ option.name }}
         </option>
       </b-select>
-      {{ selectedOption }}
     </b-field>
+  </div>
 </template>
 
 <script>
