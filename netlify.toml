@@ -8,10 +8,8 @@
 
 [context.deploy-preview.environment]
   IS_DEV = "true"
+  NODE_ENV = "development"
 
 [context.branch-deploy.environment]
   IS_DEV = "true"
-
-[context.branch-deploy.environment]
   NODE_ENV = "development"
-
