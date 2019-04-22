@@ -31,8 +31,9 @@
       }
     },
     methods: {
-      login() {
-        this.$store.dispatch('auth/login', {
+      async login() {
+        console.log('logging in......')
+        await this.$store.dispatch('auth_module/login', {
           username: this.username,
           password: this.password
         })
