@@ -31,15 +31,18 @@
       }
     },
     methods: {
-      login() {
-        this.$store.dispatch('auth/login', {
-          username: this.username,
-          password: this.password
-        })
-          .then(() => {
-            console.log('Login succeeded.')
+      async login() {
+        this.error = null
+        return this.$auth
+          .loginWith('local_drf', {
+            data: {
+              username: this.username,
+              password: this.password
+            }
           })
-
+          .catch(e => {
+            this.error = e + ''
+          })
       }
 
     }
