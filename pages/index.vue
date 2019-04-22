@@ -1,20 +1,20 @@
 <template>
   <section>
     <h1>Hello</h1>
+    <LoginForm />
   </section>
 </template>
 
 <script>
 
   import Nav from "../components/Nav";
+  import LoginForm from "../components/LoginForm";
 
   export default {
     components: {
+      LoginForm,
       Nav
     },
-    mounted() {
-      console.log(process.env.function_url)
-    }
   }
 </script>
 

@@ -66,7 +66,7 @@ export default {
     {src: "~plugins/carousel.js", ssr: false},
     {src: '~plugins/vee-validate.js', ssr: true},
     {src: "~plugins/persistedstate.js", ssr: false},
-    {src: "~plugins/api.js", ssr: false}
+    // {src: "~plugins/api.js", ssr: false}
   ],
 
   /*
@@ -77,7 +77,8 @@ export default {
     '@nuxtjs/axios',
     // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/bulma',
-    'nuxt-buefy'
+    'nuxt-buefy',
+    '@nuxtjs/auth'
   ],
   /*
   ** Axios module configuration
@@ -89,6 +90,29 @@ export default {
     headers: {
       'Content-Type': 'application/json',
       'X-Requested-With': 'XMLHttpRequest'
+    }
+  },
+
+  auth: {
+    // plugins: [ '~/plugins/api.js' ],
+    redirect: {
+      callback: '/callback',
+      login: '/',
+      logout: '/',
+    },
+    localStorage: {
+      prefix: 'auth.'
+    },
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: 'auth/jwt/create/', method: 'post', propertyName: 'access' },
+          // user: { url: 'auth/users/me/', method: 'get',propertyName: ''},
+          logout: false
+        },
+        token_key: 'access',
+        refresh_token_key: 'refresh'
+      },
     }
   },
 
