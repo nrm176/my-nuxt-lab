@@ -51,6 +51,11 @@
           Lemon
         </nuxt-link>
 
+        <nuxt-link to="/login-page" class="navbar-item">
+          Login Test
+        </nuxt-link>
+
+
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
             More

@@ -16,6 +16,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@nuxtjs/auth": "^4.5.3",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/bulma": "^1.2.1",
     "@sendgrid/mail": "^6.3.1",

@@ -1,9 +1,5 @@
 <template>
-  <div>
-    <Nav/>
-    <PhotoSlide/>
-  </div>
-
+  <PhotoSlide/>
 </template>
 
 <script>

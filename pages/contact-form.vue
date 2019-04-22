@@ -1,8 +1,5 @@
 <template>
-  <div>
-    <Nav/>
-    <ContactForm/>
-  </div>
+  <ContactForm/>
 </template>
 
 <script>
