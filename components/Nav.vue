@@ -82,7 +82,7 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <template v-if="$auth.$state.loggedIn">
+            <template v-if="isLoggedIn">
               <a class="button is-primary" @click="logout">
                 Log out
               </a>
@@ -111,12 +111,18 @@
         menuActive: false,
       }
     },
+    computed: {
+      isLoggedIn() {
+        return this.$auth.$state.loggedIn
+      }
+    },
     methods: {
       menuToggle() {
         this.menuActive = !this.menuActive;
       },
       async logout(){
         await this.$auth.logout()
+        await this.$router.push({path:'/'})
       }
     }
   }

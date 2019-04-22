@@ -82,23 +82,22 @@ export default {
 
   axios: {
     baseURL: 'http://127.0.0.1:8000/api/v1/',
-    proxy: true
-  },
-  proxy: {
-    '/api': 'http://127.0.0.1:8000'
   },
   auth: {
     redirect: {
       callback: '/callback',
       login: '/login-page',
+      logout: '/'
     },
     strategies: {
       local: {
         endpoints: {
           login: {url: '/auth/jwt/create/', method: 'post', propertyName: 'access'},
           logout: false,
-          user: false,
+          user: {url: '/auth/users/me/', method: 'get', propertyName: false}
         },
+        tokenRequired: true,
+        tokenType: 'Bearer'
       },
     }
   },
