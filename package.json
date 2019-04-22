@@ -17,9 +17,10 @@
   },
   "dependencies": {
     "@nuxtjs/auth": "^4.5.3",
-    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/axios": "^5.4.1",
     "@nuxtjs/bulma": "^1.2.1",
     "@sendgrid/mail": "^6.3.1",
+    "core-js": "^2.6.5",
     "cross-env": "^5.2.0",
     "highcharts-vue": "^1.2.0",
     "netlify-lambda": "^1.4.3",
