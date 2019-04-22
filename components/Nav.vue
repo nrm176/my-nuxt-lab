@@ -86,17 +86,17 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <template v-if="$auth.$state.loggedIn">
-              <a class="button is-dark" @click="logout">Log out</a>
-            </template>
-            <template v-else>
-              <a class="button is-primary">
-                <strong>Sign up</strong>
-              </a>
-              <a class="button is-light" @click="login">
-                Log in
-              </a>
-            </template>
+            <!--<template v-if="$auth.$state.loggedIn">-->
+              <!--<a class="button is-dark" @click="logout">Log out</a>-->
+            <!--</template>-->
+            <!--<template v-else>-->
+              <!--<a class="button is-primary">-->
+                <!--<strong>Sign up</strong>-->
+              <!--</a>-->
+              <!--<a class="button is-light" @click="login">-->
+                <!--Log in-->
+              <!--</a>-->
+            <!--</template>-->
           </div>
         </div>
       </div>

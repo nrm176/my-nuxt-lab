@@ -66,7 +66,6 @@ export default {
     {src: "~plugins/carousel.js", ssr: false},
     {src: '~plugins/vee-validate.js', ssr: true},
     {src: "~plugins/persistedstate.js", ssr: false},
-    // {src: "~plugins/api.js", ssr: false}
   ],
 
   /*
@@ -85,16 +84,10 @@ export default {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    baseURL: 'http://127.0.0.1:8000/api/v1/',
-    timeout: 5000,
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Requested-With': 'XMLHttpRequest'
-    }
+    // baseURL: 'http://127.0.0.1:8000/api/v1/',
   },
 
   auth: {
-    // plugins: [ '~/plugins/api.js' ],
     redirect: {
       callback: '/callback',
       login: '/',
@@ -104,14 +97,16 @@ export default {
       prefix: 'auth.'
     },
     strategies: {
-      local: {
+      local_drf: {
         endpoints: {
-          login: { url: 'auth/jwt/create/', method: 'post', propertyName: 'access' },
-          // user: { url: 'auth/users/me/', method: 'get',propertyName: ''},
+          login: {url: 'http://127.0.0.1:8000/api/v1/auth/jwt/create/', method: 'post', propertyName: 'access'},
+          user: {url: 'http://127.0.0.1:8000/api/v1/auth/users/me/', method: 'get', propertyName: ''},
           logout: false
         },
-        token_key: 'access',
-        refresh_token_key: 'refresh'
+        // tokenRequired: true,
+        // tokenType: 'Bearer',
+        // token_key: 'access',
+        // refresh_token_key: 'refresh'
       },
     }
   },
