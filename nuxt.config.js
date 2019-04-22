@@ -74,42 +74,31 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/auth',
     // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/bulma',
     'nuxt-buefy',
-    '@nuxtjs/auth'
   ],
-  /*
-  ** Axios module configuration
-  */
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-    timeout: 5000,
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Requested-With': 'XMLHttpRequest'
-    }
-  },
 
+  axios: {
+    baseURL: 'http://127.0.0.1:8000/api/v1/',
+    proxy: true
+  },
+  proxy: {
+    '/api': 'http://127.0.0.1:8000'
+  },
   auth: {
     redirect: {
       callback: '/callback',
-      login: '/login',
-      logout: '/',
-    },
-    localStorage: {
-      prefix: 'auth.'
+      login: '/login-page',
     },
     strategies: {
-      local_drf: {
+      local: {
         endpoints: {
           login: {url: '/auth/jwt/create/', method: 'post', propertyName: 'access'},
-          user: {url: '/auth/users/me/', method: 'get', propertyName: ''}
+          logout: false,
+          user: false,
         },
-        tokenRequired: true,
-        tokenType: 'Bearer',
-        token_key: 'access',
-        refresh_token_key: 'refresh'
       },
     }
   },
@@ -124,7 +113,8 @@ export default {
           customProperties: false
         }
       }
-    },
+    }
+    ,
     /*
     ** You can extend webpack config here
     */

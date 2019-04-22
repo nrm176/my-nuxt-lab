@@ -32,17 +32,18 @@
     },
     methods: {
       async login() {
-        this.error = null
-        return this.$auth
-          .loginWith('local_drf', {
-            data: {
-              username: this.username,
-              password: this.password
-            }
-          })
-          .catch(e => {
-            this.error = e + ''
-          })
+        try {
+          await this.$auth
+            .loginWith('local', {
+              data: {
+                username: this.username,
+                password: this.password
+              }
+            })
+          this.$router.push({path: '/lemon', force: true})
+        } catch (e) {
+
+        }
       }
 
     }

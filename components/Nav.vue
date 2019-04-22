@@ -82,12 +82,19 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <a class="button is-primary">
-              <strong>Sign up</strong>
-            </a>
-            <a class="button is-light">
-              Log in
-            </a>
+            <template v-if="$auth.$state.loggedIn">
+              <a class="button is-primary" @click="logout">
+                Log out
+              </a>
+            </template>
+            <template v-else>
+              <a class="button is-primary">
+                <strong>Sign up</strong>
+              </a>
+              <a class="button is-light">
+                Log in
+              </a>
+            </template>
           </div>
         </div>
       </div>
@@ -108,6 +115,9 @@
       menuToggle() {
         this.menuActive = !this.menuActive;
       },
+      async logout(){
+        await this.$auth.logout()
+      }
     }
   }
 </script>
