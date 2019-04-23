@@ -55,6 +55,10 @@
           Login Test
         </nuxt-link>
 
+        <nuxt-link to="/viewer" class="navbar-item">
+          Viewer
+        </nuxt-link>
+
 
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
@@ -120,9 +124,9 @@
       menuToggle() {
         this.menuActive = !this.menuActive;
       },
-      async logout(){
+      async logout() {
         await this.$auth.logout()
-        await this.$router.push({path:'/'})
+        await this.$router.push({path: '/'})
       }
     }
   }

@@ -97,7 +97,8 @@ export default {
           user: {url: '/auth/users/me/', method: 'get', propertyName: false}
         },
         tokenRequired: true,
-        tokenType: 'Bearer'
+        tokenType: 'Bearer',
+        refresh_token_key: 'refresh'
       },
     }
   },
