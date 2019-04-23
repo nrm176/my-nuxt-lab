@@ -6,6 +6,7 @@
     import Hero3 from "../components/Hero3";
     export default {
         name: "lemon",
+      middleware: ['auth'],
       components: {Hero3}
     }
 </script>

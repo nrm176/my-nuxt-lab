@@ -66,7 +66,6 @@ export default {
     {src: "~plugins/carousel.js", ssr: false},
     {src: '~plugins/vee-validate.js', ssr: true},
     {src: "~plugins/persistedstate.js", ssr: false},
-    {src: "~plugins/api.js", ssr: false}
   ],
 
   /*
@@ -77,18 +76,38 @@ export default {
     '@nuxtjs/axios',
     // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/bulma',
-    'nuxt-buefy'
+    'nuxt-buefy',
+    '@nuxtjs/auth'
   ],
   /*
   ** Axios module configuration
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    baseURL: 'http://127.0.0.1:8000/api/v1/',
-    timeout: 5000,
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Requested-With': 'XMLHttpRequest'
+    // baseURL: 'http://127.0.0.1:8000/api/v1/',
+  },
+
+  auth: {
+    redirect: {
+      callback: '/callback',
+      login: '/',
+      logout: '/',
+    },
+    localStorage: {
+      prefix: 'auth.'
+    },
+    strategies: {
+      local_drf: {
+        endpoints: {
+          login: {url: 'http://127.0.0.1:8000/api/v1/auth/jwt/create/', method: 'post', propertyName: 'access'},
+          user: {url: 'http://127.0.0.1:8000/api/v1/auth/users/me/', method: 'get', propertyName: ''},
+          logout: false
+        },
+        // tokenRequired: true,
+        // tokenType: 'Bearer',
+        // token_key: 'access',
+        // refresh_token_key: 'refresh'
+      },
     }
   },
 
