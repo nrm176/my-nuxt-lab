@@ -16,6 +16,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@chenfengyuan/vue-carousel": "^1.0.1",
     "@nuxtjs/auth": "^4.5.3",
     "@nuxtjs/axios": "^5.4.1",
     "@nuxtjs/bulma": "^1.2.1",

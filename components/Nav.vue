@@ -117,7 +117,7 @@
     },
     computed: {
       isLoggedIn() {
-        return this.$auth.$state.loggedIn
+        return this.$store.state.auth.loggedIn
       }
     },
     methods: {
@@ -126,7 +126,6 @@
       },
       async logout() {
         await this.$auth.logout()
-        await this.$router.push({path: '/'})
       }
     }
   }

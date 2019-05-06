@@ -3,6 +3,8 @@ import pkg from './package'
 export default {
   mode: 'universal',
 
+  runtimeCompiler: true,
+
   /*
   ** Headers of the page
   */
@@ -66,6 +68,8 @@ export default {
     {src: "~plugins/carousel.js", ssr: false},
     {src: '~plugins/vee-validate.js', ssr: true},
     {src: "~plugins/persistedstate.js", ssr: false},
+    {src: "~plugins/vue-carousel.js", ssr: false},
+    {src: "~plugins/axios.js", ssr: false},
   ],
 
   /*
@@ -86,8 +90,8 @@ export default {
   auth: {
     redirect: {
       callback: '/callback',
-      login: '/login-page',
-      logout: '/'
+      login: '/login',
+      logout: '/',
     },
     strategies: {
       local: {
