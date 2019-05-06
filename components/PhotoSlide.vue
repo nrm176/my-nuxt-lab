@@ -11,6 +11,7 @@
               :perPage="1"
               paginationPosition="bottom-overlay"
               :navigationClickTargetSize=8
+              class="no-outline"
 
             >
               <slide v-for="image in images" :key="image.id">
@@ -60,6 +61,10 @@
 
   .VueCarousel-dot-container {
     marin-top: -15px;
+  }
+
+  .padding >>> .VueCarousel-dot:focus  {
+    outline: none !important;
   }
 
   .label {
