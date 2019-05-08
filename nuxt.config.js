@@ -80,6 +80,9 @@ export default {
     'nuxt-buefy',
     ['@nuxtjs/google-analytics',
       {id: 'UA-139856246-1'}
+    ],
+    ['@nuxtjs/google-tag-manager',
+      {id: 'GTM-NTZJG4S'}
     ]
   ],
   /*
