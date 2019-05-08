@@ -171,6 +171,7 @@
       validateAndSubmit(e) {
         this.$validator.validateAll().then(x => {
           if (x) {
+            this.$ga.event('ContactForm', 'ValidateAndSubmit', 'ValidateAndSubmit', 123)
             this.SubmitForm()
           }
         }).catch(e => {
