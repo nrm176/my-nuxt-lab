@@ -20,7 +20,7 @@
           Home
         </a>
 
-        <nuxt-link to="/slide" class="navbar-item">
+        <nuxt-link to="/slide" class="navbar-item" @click.native="closeNav()">
           Slide
         </nuxt-link>
         <nuxt-link to="/contact-form" class="navbar-item">
@@ -114,6 +114,10 @@
       }
     },
     methods: {
+      closeNav() {
+        console.log('clicked!')
+        this.menuActive = false
+      },
       menuToggle() {
         this.menuActive = !this.menuActive;
       },
@@ -123,10 +127,24 @@
       async logout() {
         await this.$auth.logout();
       },
-    }
+    },
+    watch: {
+      '$route' () {
+        console.log('route change detected!!!!!!!')
+        this.menuActive = false
+      }
+    },
   }
 </script>
 
 <style scoped>
+  .fade {
+    opacity: 0.0;
+    transition: all .5s ease-out;
+  }
+
+  .fade.is-active {
+    opacity: 1.0;
+  }
 
 </style>

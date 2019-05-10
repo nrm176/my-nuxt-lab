@@ -51,12 +51,15 @@ export default {
   */
   css: [
     'normalize.css',
-    '~/static/css/global.css'
+    '~/static/css/global.css',
+    // '~/assets/main.css'
   ],
 
   env: {
-    function_url: `${process.env.DEPLOY_PRIME_URL}/.netlify/functions`
-    // function_url: process.env.CONTEXT === undefined ? process.env.DEPLOY_PRIME_URL : process.env.CONTEXT == 'production' ? `${process.env.URL}/.netlify/functions` : process.env.CONTEXT == 'dev' ? `${process.env.DEPLOY_PRIME_URL}/.netlify/functions` : 'http://localhost:9000'
+    function_url: `${process.env.DEPLOY_PRIME_URL}/.netlify/functions`,
+    baseImageURL: 'https://res.cloudinary.com/dfkqsafii/image/upload',
+    imagePathId: 'v1554265123',
+    cloudinary_param: 'c_thumb,w_600,g_face'
   },
 
   /*

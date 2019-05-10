@@ -1,7 +1,7 @@
 <template>
-  <div class="hero">
-    <div class="container">
-        <div class="padding">
+  <section class="section container">
+
+        <div class="column padding">
 
           <no-ssr>
             <carousel
@@ -12,28 +12,26 @@
               paginationPosition="bottom-overlay"
               :navigationClickTargetSize=8
               class="no-outline"
-
             >
               <slide v-for="image in images" :key="image.id">
           <span>
             <img
-              :src="`https://res.cloudinary.com/dfkqsafii/image/upload/c_thumb,w_600,g_face/v1554265123/my-nuxt-lab/${image.src}.jpg`"/>
+              :src="`${env.baseImageURL}/${env.cloudinary_param}/${env.imagePathId}/my-nuxt-lab/${image.src}.jpg`"/>
           </span>
               </slide>
 
             </carousel>
           </no-ssr>
         </div>
-
-
-    </div>
-  </div>
+  </section>
 
 </template>
 
 <script>
+  import env from '@/mixins/cloudinary'
   export default {
     name: "PhotoSlide",
+    mixins: [env],
     data() {
       return {
         images: [

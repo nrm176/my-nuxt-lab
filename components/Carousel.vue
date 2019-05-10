@@ -1,7 +1,7 @@
 <template>
   <div class="carousel">
     <no-ssr>
-      <carousel :data="data"></carousel>
+      <carousel :data="imageData"></carousel>
     </no-ssr>
   </div>
 </template>
@@ -11,7 +11,7 @@
     name: "Carousel",
     data() {
       return {
-        data: [
+        imageData: [
           '<div class="example-slide">Slide 1</div>',
           '<div class="example-slide">Slide 2</div>',
           '<div class="example-slide">Slide 3</div>',
@@ -24,8 +24,8 @@
 <style scoped>
   .carousel >>> .example-slide {
     align-items: center;
-    background-color: #666;
-    color: #999;
+    background-color: #fefdff;
+    color: #fefdff;
     display: flex;
     font-size: 1.5rem;
     justify-content: center;
