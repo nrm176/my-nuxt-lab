@@ -46,6 +46,14 @@
       </div>
     </div>
 
+    <div class="columns">
+      <div class="column">
+        <div class="column">
+          <Pie />
+        </div>
+      </div>
+    </div>
+
   </div>
 
 
@@ -53,10 +61,12 @@
 
 <script>
   import {GChart} from 'vue-google-charts'
+  import Pie from "./Pie";
 
   export default {
     name: "VueGoogleChart",
     components: {
+      Pie,
       GChart
     },
     data() {
