@@ -1,5 +1,5 @@
 [build]
-  command = "npm run generate; npm run build:lambda"
+  command = "npm run generate;"
   functions = "lambda"
 
 [context.production]
