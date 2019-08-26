@@ -1,7 +1,6 @@
 [build]
   command = "npm run generate; npm run build:lambda"
   functions = "lambda"
-  publish = "functions"
 
 [context.production]
   command = 'export MY_ENV="HELLO"; npm run generate;'
